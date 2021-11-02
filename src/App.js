@@ -1,6 +1,10 @@
+import Form from "./components/Form"
+
 function App() {
   return (
-    'Hey, Serhii :)'
+    <>
+      <Form />
+    </>
   )
 }
 
