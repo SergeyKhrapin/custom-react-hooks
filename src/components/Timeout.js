@@ -13,6 +13,7 @@ function Timeout() {
 
   return (
     <div>
+      <h2>useTimeout</h2>
       <p>{ counter }</p>
       <button onClick={() => setCounter(c => c + 1)}>Increment Counter</button>
       <button onClick={clear}>Clear Timeout</button>

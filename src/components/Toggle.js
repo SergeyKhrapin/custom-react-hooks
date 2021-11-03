@@ -5,6 +5,7 @@ function Toggle() {
 
   return (
     <div>
+      <h2>useToggle</h2>
       <p>{ toggle.toString() }</p>
       <button onClick={toggleValue}>Toggle</button>
       <button onClick={() => toggleValue(true)}>Make true</button>

@@ -7,6 +7,7 @@ function Fetch() {
 
   return (
     <div>
+      <h2>useFetch</h2>
       <span>Please choose URL you want to fetch</span>
       <button onClick={() => setURL('https://jsonplaceholder.typicode.com/posts')}>Post</button>
       <button onClick={() => setURL('https://jsonplaceholder.typicode.com/users')}>Users</button>

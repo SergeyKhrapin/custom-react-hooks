@@ -15,6 +15,7 @@ function Form() {
 
   return (
     <div>
+      <h2>useInput</h2>
       <form onSubmit={(e) => submitForm(e)}>
         <input {...inputName} type="text" placeholder="Name" />
         <input {...inputSurname} type="text" placeholder="Surname" />
