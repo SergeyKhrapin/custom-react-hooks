@@ -1,18 +1,21 @@
-import { useState } from "react"
+import { useEffect, useRef } from "react"
 
-function useTimeout(func, delay = 0) {
-  const [timeoutID, setTimeoutID] = useState(null)
+function useTimeout(callback, delay = 0) {
+  const callbackRef = useRef(callback)
+  const timeoutID = useRef(null)
+
+  useEffect(() => {
+    callbackRef.current = callback
+  }, [callback])
+
+  useEffect(start, [delay])
 
   function start() {
-    const id = setTimeout(() => {
-      func()
-    }, delay)
-    setTimeoutID(id)
+    timeoutID.current = setTimeout(callbackRef.current, delay)
   }
 
   function clear() {
-    clearTimeout(timeoutID)
-    setTimeoutID(null)
+    clearTimeout(timeoutID.current)
   }
 
   return {

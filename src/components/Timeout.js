@@ -11,8 +11,6 @@ function Timeout() {
   const [counter, setCounter] = useState(10)
   const { start, clear } = useTimeout(() => setCounter(0), 2000)
 
-  useEffect(start, [])
-
   return (
     <div>
       <p>{ counter }</p>
