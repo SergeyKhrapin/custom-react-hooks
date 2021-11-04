@@ -4,9 +4,13 @@ function useModal(callback, closeByClickingOutside = true) {
   const [isModalShown, setModalShown] = useState(false)
   const modalRef = useRef()
   const closeRef = useRef()
+  const callbackRef = useRef(callback)
 
   useEffect(() => {
-    console.log('useEffect');
+    callbackRef.current = callback
+  }, [callback])
+
+  useEffect(() => {
     function closeModal(e) {
       if (closeByClickingOutside) {
         if (modalRef.current !== e.target && !(modalRef.current?.contains(e.target)) || closeRef.current === e.target) {
@@ -24,12 +28,12 @@ function useModal(callback, closeByClickingOutside = true) {
     return () => {
       window.removeEventListener('click', closeModal)
     }
-  }, [callback, closeByClickingOutside])
+  }, [closeByClickingOutside])
 
   function openModal(e) {
     e.stopPropagation()
     setModalShown(isModalShownPrev => {
-      !isModalShownPrev && typeof callback === 'function' && callback()
+      !isModalShownPrev && typeof callbackRef.current === 'function' && callbackRef.current()
       return true
     })
   }
