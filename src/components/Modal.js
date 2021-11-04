@@ -31,7 +31,7 @@ function Modal() {
 
   return (
     <div>
-      <h2 ref={modalRef}>useModal</h2>
+      <h2>useModal</h2>
       <div style={styles.wrapper}>
         <button onClick={showModal}>Open Modal</button>
         {isModal && (
