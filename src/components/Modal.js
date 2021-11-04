@@ -1,3 +1,4 @@
+import { useCallback } from "react"
 import useModal from "../customHooks/useModal"
 
 const styles = {
@@ -23,7 +24,11 @@ const styles = {
 }
 
 function Modal() {
-  const [isModal, showModal, modalRef, closeRef] = useModal()
+  const [isModal, showModal, modalRef, closeRef] = useModal(useCallback(doSthOnceModalOpens, []))
+
+  function doSthOnceModalOpens() {
+    console.log('Congratulations! The modal has been opened successfully!')
+  }
 
   return (
     <div>
