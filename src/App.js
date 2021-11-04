@@ -2,6 +2,7 @@ import Form from "./components/Form"
 import Toggle from "./components/Toggle"
 import Timeout from "./components/Timeout"
 import Fetch from "./components/Fetch"
+import Modal from "./components/Modal"
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Timeout />
       <hr />
       <Fetch />
+      <hr />
+      <Modal />
     </>
   )
 }
