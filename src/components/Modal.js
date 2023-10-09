@@ -26,7 +26,7 @@ function Modal() {
   const [isModal, showModal, modalRef, closeRef] = useModal(doSthOnceModalOpens)
 
   function doSthOnceModalOpens() {
-    console.log('Congratulations! The modal has been opened successfully!')
+    // console.log('Congratulations! The modal has been opened successfully!')
   }
 
   return (
