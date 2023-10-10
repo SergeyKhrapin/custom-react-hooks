@@ -10,26 +10,26 @@ class Shape {
 
 class Circle extends Shape {
   constructor(radius) {
-    console.log("constructor");
+    // console.log("constructor");
     super();
     this.radius = radius;
   }
 
   static _ = (() => {
-    console.log("static block");
+    // console.log("static block");
   })()
 
   diameter = this.radius * 2;
 
   calculateSquare() {
-    console.log('this', this);
+    // console.log('this', this);
     return 2 * 3.14 * this.radius;
   }
 }
 
 const circle = new Circle(10);
-console.log("circle", circle instanceof Shape);
-console.log("calculateSquare", circle.calculateSquare());
+// console.log("circle", circle instanceof Shape);
+// console.log("calculateSquare", circle.calculateSquare());
 
 const Country = () => {
   const [country, setCountry] = useState("")
@@ -62,3 +62,5 @@ const Country = () => {
 }
 
 export default Country
+
+// test 1
