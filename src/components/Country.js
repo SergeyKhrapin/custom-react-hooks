@@ -62,5 +62,3 @@ const Country = () => {
 }
 
 export default Country
-
-// 1
