@@ -17,6 +17,7 @@ const useDebounce = (fetchCountries, delay) => {
         const countries = await response.json()
         setSuggestions(countries)
       } else {
+        console.log('12345');
         setSuggestions([])
       }
     }, delay)
