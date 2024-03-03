@@ -1,9 +1,6 @@
 import {useState} from "react"
 
 const useDebounce = (fetchCountries, delay) => {
-  console.log('test branch - commit 1');
-  console.log('test branch - commit 3');
-
   const [suggestions, setSuggestions] = useState([])
   
   let timerId
@@ -17,7 +14,6 @@ const useDebounce = (fetchCountries, delay) => {
         const countries = await response.json()
         setSuggestions(countries)
       } else {
-        console.log('12345');
         setSuggestions([])
       }
     }, delay)
