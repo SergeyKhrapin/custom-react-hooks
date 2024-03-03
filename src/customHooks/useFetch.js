@@ -1,8 +1,6 @@
 import { useRef, useState } from "react"
 
 function useFetch(url) {
-  console.log('test branch - commit 2')
-
   const [data, setData] = useState(null)
   const prevURL = useRef()
 
