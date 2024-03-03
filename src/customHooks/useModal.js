@@ -46,6 +46,4 @@ function useModal(callback, closeByClickingOutside = true) {
   return [isModalShown, openModal, modalRef, closeRef]
 }
 
-console.log('master - commit 2');
-
 export default useModal
