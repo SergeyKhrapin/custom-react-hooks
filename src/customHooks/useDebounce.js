@@ -25,6 +25,4 @@ const useDebounce = (fetchCountries, delay) => {
   return [func, suggestions]
 }
 
-console.log('master - commit 1');
-
 export default useDebounce
