@@ -1,19 +1,21 @@
-import { useRef, useState } from "react"
+import { useState } from "react";
 
-function useFetch(url) {
-  const [data, setData] = useState(null)
-  const prevURL = useRef()
+export function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const fetchData = async () => {
-    // do not call the same URL again
-    if (url && url !== prevURL.current) {
-      const response = await fetch(url)
-      setData(await response.json())
-      prevURL.current = url
+    setIsLoading(true);
+    try {
+      const response = await fetch(url);
+      setData(await response.json());
+    } catch (e) {
+      setIsError(e);
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
-  return [fetchData, data]
+  return { fetchData, data, isLoading, isError };
 }
-
-export default useFetch
